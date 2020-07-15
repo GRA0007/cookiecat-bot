@@ -19,7 +19,10 @@ client.on('message', async message => {
 
 	if (message.mentions.has(client.user)) {
 		const args = message.content.trim().split(/ +/).filter(arg => !Discord.MessageMentions.USERS_PATTERN.test(arg));
-		const command = args.shift().toLowerCase();
+		const command = '';
+		if (args.length > 0) {
+			command = args.shift().toLowerCase();
+		}
 
 		if (command == 'help' || command == 'about') {
 			let em = new Discord.MessageEmbed()
