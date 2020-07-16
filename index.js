@@ -19,7 +19,7 @@ client.on('message', async message => {
 
 	if (message.mentions.has(client.user)) {
 		const args = message.content.trim().split(/ +/).filter(arg => !Discord.MessageMentions.USERS_PATTERN.test(arg));
-		const command = '';
+		let command = '';
 		if (args.length > 0) {
 			command = args.shift().toLowerCase();
 		}
