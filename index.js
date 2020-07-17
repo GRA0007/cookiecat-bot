@@ -4,6 +4,8 @@ const settings = require('./config.json');
 
 const client = new Discord.Client();
 
+let mentionregex = new RegExp('\<.*?\>');
+
 client.on('ready', () => {
 	console.log(`Logged in as ${client.user.tag}!`);
 	client.user.setActivity('with Steven! | Mention me');
@@ -18,11 +20,12 @@ client.on('message', async message => {
 	if (message.author.bot) return;
 
 	if (message.mentions.has(client.user)) {
-		const args = message.content.trim().split(/ +/).filter(arg => !Discord.MessageMentions.USERS_PATTERN.test(arg));
+		const args = message.content.trim().split(/ +/).filter(arg => !mentionregex.test(arg));
 		let command = '';
 		if (args.length > 0) {
 			command = args.shift().toLowerCase();
 		}
+		console.log(args, command);
 
 		if (command == 'help' || command == 'about') {
 			let em = new Discord.MessageEmbed()
