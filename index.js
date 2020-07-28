@@ -32,7 +32,7 @@ client.on('message', async message => {
 				.setColor('#fe9bbd')
 				.setAuthor('CookieCat', 'https://cdn.discordapp.com/avatars/356796629950529538/7030a258fd1de95d46ac13af22b924b1.webp', 'https://gra0007.github.io/cookiecat-website/')
 				.addField('Joined servers', client.guilds.cache.size, true)
-				.addField('Invite link', 'https://bit.ly/cookiecatbot', true)
+				.addField('Invite link', 'http://gg.gg/cookiecat', true)
 				.addField('Creator', 'Benpai#9772', true)
 				.addField('Help', 'Mention @CookieCat to get the lyrics to the Cookie Cat song from Cartoon Network\'s Steven Universe. If you are in a voice channel, the music will also play.');
 			message.channel.send(em);
